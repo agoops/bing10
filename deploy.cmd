@@ -2,7 +2,7 @@
 
 :: ----------------------
 :: KUDU Deployment Script
-:: Version: 1.0.6
+:: Version: 0.1.13
 :: ----------------------
 
 :: Prerequisites
@@ -118,12 +118,9 @@ IF NOT EXIST "%DEPLOYMENT_TARGET%\env\azure.env.%PYTHON_RUNTIME%.txt" (
   echo Found compatible virtual environment.
 )
 
-echo "hello fromd ankit's deployment"
-
 :: 4. Install packages
 echo Pip install requirements.
 env\scripts\pip install -r requirements.txt
-
 IF !ERRORLEVEL! NEQ 0 goto error
 
 REM Add additional package installation here
