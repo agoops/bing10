@@ -41,13 +41,3 @@ def search():
 
 		results = searchBing(search_term)
 		return render_template('show_entries.html', entries = results, search_term = search_term, searched=True)
-
-# @app.route('/')
-# @app.route('/home')
-# def home():
-#     """Renders the home page."""
-#     return render_template(
-#         'index.html',
-#         title='Home Page',
-#         year=datetime.now().year,
-#     )
