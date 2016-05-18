@@ -47,7 +47,7 @@ def search():
 	if request.method == 'POST':
 		search_term = request.form['search_term']
 		print(search_term)
-		
+
 		results = searchBing(search_term)
 		return render_template('show_entries.html', entries = results, search_term = search_term, searched=True)
 
@@ -81,4 +81,4 @@ def search():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
