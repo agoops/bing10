@@ -149,7 +149,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\manage.py" (
     )
   )
 )
-python bingers.py
+
 popd
 
 :postPython
