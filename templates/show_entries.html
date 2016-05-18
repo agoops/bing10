@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if True %}
+  <p>
+    This small app will return the first 10 search results from Bing. Give it a go!
+  </p>
+    <form action="{{ url_for('search') }}" method="post" class="add-entry">
+      <dl>
+        <dd><input type="text" size="28" name="search_term" value="{{search_term}}">
+        <dd><input type="submit" value="Search">
+      </dl>
+    </form>
+  {% endif %}
+  <ul class="entries">
+  {% for entry in entries %}
+    <li>{{loop.index}}.&emsp;{{ entry.text|safe }}
+  
+  {% endfor %}
+  {% if entries|length < 1 and searched%}
+    <li><em>No search results!</em>
+  {% endif %}
+  {% if entries|length < 10 and entries|length > 0 and searched%}
+    <li><em>Only {{entries|length}} total results!</em>
+  {% endif %}
+    
+  </ul>
+{% endblock %}
